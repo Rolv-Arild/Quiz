@@ -45,7 +45,7 @@ $(document).ready(function () {
         $('#QTable').append(
             "<tr>"+
             "<td>" + $('#question').val() + "</td>"+
-            "<td>" + $('#duration').val() + "</td>"+
+            "<td>" + $('#duration').val() + " seconds" + "</td>"+
             "</tr>"
         );
         $('#question').val("");
@@ -126,5 +126,21 @@ $(document).ready(function () {
 
     $('#back').click(function () {
         window.location.href = "/Quiz/";
+    });
+
+
+    $('#QTable tbody').on('click', 'tr', function () {
+        var row = $(this).closest('tr');
+        var rowData = questions[row];
+        if (rowData === null) return;
+
+        $('#question').val(rowData.question);
+        $('#duration').val(rowData.duration);
+        $('#answer1').val(rowData.options[0]);
+        $('#answer2').val(rowData.options[1]);
+        $('#answer3').val(rowData.options[2]);
+        $('#answer4').val(rowData.options[3]);
+
+        $('#questionModal').modal();
     });
 });

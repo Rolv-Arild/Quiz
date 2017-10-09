@@ -1,3 +1,9 @@
+
+:root{
+    --main: deeppink;
+    --secondary: deepskyblue;
+}
+
 body{
     background-image: url("img/White-Background-9B1_ROA1R16.jpg");/*"https://wallpaperbrowse.com/media/images/White-Background-9B1_ROA1R16.jpg"*/
     background-size: cover;
@@ -30,11 +36,11 @@ text-align-all: center;
 }
 
 .btn-default {
-    background-color: deeppink;
+    background-color: var(--main);
 }
 
 .btn-lg {
-    background-color: deeppink;
+    background-color: var(--main);
     width: 25vw;
     height: 25vh;
     padding-top: 5vh;
@@ -48,18 +54,18 @@ text-align-all: center;
 }
 
 .selected {
-    background-color: deepskyblue;
+    background-color: var(--secondary);
 }
 
 th {
-    background-color: deeppink;
+    background-color: var(--main);
     border: 1px solid black;
     font-size: 2em;
     text-align: center;
 }
 
 td {
-    background-color: deepskyblue;
+    background-color: var(--secondary);
     border: 1px solid black;
     font-size: 1em;
     text-align: center;
@@ -68,9 +74,9 @@ td {
 
 /* For changing selected indices' color */
 table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
-    background-color: deepskyblue;
+    background-color: var(--secondary);
 }
 
 table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
-    background-color: deepskyblue;
+    background-color: var(--secondary);
 }
