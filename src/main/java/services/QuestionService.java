@@ -43,6 +43,7 @@ public class QuestionService {
         q.setOptions(question.getOptions());
         q.setQuestion(question.getQuestion());
         q.setDuration(question.getDuration());
+        q.setPicURL(question.getPicURL());
         questions.put(id, q);
     }
 
