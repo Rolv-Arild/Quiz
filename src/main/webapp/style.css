@@ -2,6 +2,7 @@
 :root{
     --main: deeppink;
     --secondary: deepskyblue;
+    --font1: cursive;
 }
 
 body{
@@ -18,7 +19,7 @@ text-align-all: center;
 #websiteTitle{
     font-size: 7em;
     vertical-align: middle;
-    font-family: cursive;
+    font-family: var(--font1);
     padding-left: 15px;
     color: deeppink;
 }
