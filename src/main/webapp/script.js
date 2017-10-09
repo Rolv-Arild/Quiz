@@ -25,11 +25,6 @@ $(document).ready(function() {
     },
     30000);
 
-    $('#newQuiz').click(function () {
-        document.location.href = "QuizMaker";
-    });
-
-
     $('#quizTable tbody').on('click', 'tr', function () {
         var row = $(this).closest('tr');
         var rowData = quizT.dataTable().fnGetData(row);
