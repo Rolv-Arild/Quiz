@@ -44,7 +44,7 @@ $(document).ready(function () {
         $('#QTable').append(
             "<tr>"+
             "<td>" + $('#question').val() + "</td>"+
-            "<td>" + $('#duration').val() + "</td>"+
+            "<td>" + $('#duration').val() + " seconds" + "</td>"+
             "</tr>"
         );
         $('#question').val("");
