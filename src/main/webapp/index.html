@@ -17,21 +17,26 @@
         <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
         <script src="script.js" defer type="application/javascript"></script>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nosifer" type="text/css">
     </head>
     <body>
         <div class="container">
-            <h1>Quiz</h1>
+            <a href="index.html" style="text-decoration: none">
+                <div class="text-center">
+                    <img src="img/quiz.png" alt="">
+                    <span id="websiteTitle">Quiz</span>
+                </div>
+            </a>
+
             <table id="quizTable" class="display compact">
                 <thead>
                     <tr><th>Quiz Name</th><th>Start Time</th></tr>
                 </thead>
             </table>
             <br>
-            <!-- Button trigger modal -->
+
             <a href="QuizMaker">
-            <button id="newQuiz" class="btn btn-default">
-                New quiz
-            </button>
+                <button id="newQuiz" class="btn btn-default">New quiz</button>
             </a>
         </div>
 

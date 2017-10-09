@@ -15,6 +15,26 @@ width: 100%;
 text-align-all: center;
 }
 
+#websiteTitle{
+    font-size: 7em;
+    vertical-align: middle;
+    font-family: cursive;
+    padding-left: 15px;
+    color: deeppink;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+#quizTable tbody{
+    cursor: pointer;
+}
+
+#QTable tbody{
+    cursor: pointer;
+}
+
 .btn-default {
     background-color: var(--main);
 }
