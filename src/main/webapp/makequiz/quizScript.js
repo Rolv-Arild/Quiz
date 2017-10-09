@@ -38,7 +38,8 @@ $(document).ready(function () {
             question: $('#question').val(),
             duration: $('#duration').val(),
             options: [$('#answer1').val(), $('#answer2').val(), $('#answer3').val(), $('#answer4').val()],
-            answerIndex: selectedIndex
+            answerIndex: selectedIndex,
+            picURL : $('#picUrl').val()
         };
         questions.push(question);
         $('#QTable').append(

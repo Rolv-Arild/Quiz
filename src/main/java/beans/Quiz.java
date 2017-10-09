@@ -29,6 +29,7 @@ public class Quiz {
     private List<Player> players = new ArrayList<>();
 
     /* Getters */
+
     public int getId() {
         return id;
     }

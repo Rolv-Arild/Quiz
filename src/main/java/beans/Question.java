@@ -27,6 +27,9 @@ public class Question {
     @XmlElement(name = "duration")
     private int duration;
 
+    @XmlElement(name = "picURL")
+    private String picURL;
+
 
     /* Getters */
     public int getId() {
@@ -49,6 +52,10 @@ public class Question {
         return duration;
     }
 
+    public String getPicURL() {
+        return picURL;
+    }
+
     /* Setters */
     public void setId(int id) {
         this.id = id;
@@ -69,6 +76,11 @@ public class Question {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+
+    public void setPicURL(String picURL) {
+        this.picURL = picURL;
+    }
+
 
 
     @Override
