@@ -2,7 +2,7 @@
 :root{
     --main: deeppink;
     --secondary: deepskyblue;
-    --font1: cursive;
+    --font1: Trocchi cursive;
 }
 
 body{
@@ -21,7 +21,7 @@ text-align-all: center;
     vertical-align: middle;
     font-family: var(--font1);
     padding-left: 15px;
-    color: deeppink;
+    color: var(--main);
 }
 
 .btn{

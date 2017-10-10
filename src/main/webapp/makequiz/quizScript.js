@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
     var questions = [];
+    var index = -1;
 
     $('#closeModal').click(function () {
         $('#question').val("");
@@ -59,7 +60,15 @@ $(document).ready(function () {
             answerIndex: selectedIndex,
             picURL : $('#picUrl').val()
         };
-        questions.push(question);
+        if(index == -1){
+            questions.push(question);
+        }
+        else{
+            document.getElementById('QTable').deleteRow(index + 1);
+            questions[index] = question;
+            index = -1;
+        }
+
         $('#QTable').append(
             "<tr>"+
             "<td>" + $('#question').val() + "</td>"+
@@ -159,8 +168,8 @@ $(document).ready(function () {
 
 
     $('#QTable tbody').on('click', 'tr', function () {
-        var row = $(this).index();
-        var rowData = questions[row];
+        index = $(this).index();
+        var rowData = questions[index];
         if (rowData === null) return;
 
         $('#question').val(rowData.question);
