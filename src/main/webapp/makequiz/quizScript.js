@@ -5,6 +5,20 @@
 $(document).ready(function () {
     var questions = [];
 
+    $('#closeModal').click(function () {
+        $('#question').val("");
+        $('#duration').val("");
+        $('#answer1').val("");
+        $('#answer2').val("");
+        $('#answer3').val("");
+        $('#answer4').val("");
+        $('#picURL').val("");
+        document.getElementById('radio1').checked = false;
+        document.getElementById('radio2').checked = false;
+        document.getElementById('radio3').checked = false;
+        document.getElementById('radio4').checked = false;
+    });
+
     $('#saveQ').click(function () {
 
         if (!$('#question').val()) {
@@ -48,12 +62,17 @@ $(document).ready(function () {
             "<td>" + $('#duration').val() + " seconds" + "</td>"+
             "</tr>"
         );
+        document.getElementById('radio1').checked = false;
+        document.getElementById('radio2').checked = false;
+        document.getElementById('radio3').checked = false;
+        document.getElementById('radio4').checked = false;
         $('#question').val("");
         $('#duration').val("");
         $('#answer1').val("");
         $('#answer2').val("");
         $('#answer3').val("");
         $('#answer4').val("");
+        $('#picURL').val("");
     });
 
     $("#save").click(function () {
@@ -130,7 +149,7 @@ $(document).ready(function () {
 
 
     $('#QTable tbody').on('click', 'tr', function () {
-        var row = $(this).closest('tr');
+        var row = $(this).index();
         var rowData = questions[row];
         if (rowData === null) return;
 
@@ -140,6 +159,7 @@ $(document).ready(function () {
         $('#answer2').val(rowData.options[1]);
         $('#answer3').val(rowData.options[2]);
         $('#answer4').val(rowData.options[3]);
+        $('#picURL').val(rowData.picURL);
 
         $('#questionModal').modal();
     });
