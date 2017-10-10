@@ -16,7 +16,6 @@ $(document).ready(function () {
         document.getElementById('radio1').checked = false;
         document.getElementById('radio2').checked = false;
         document.getElementById('radio3').checked = false;
-        document.getElementById('radio3').checked = false;
         document.getElementById('radio4').checked = false;
         $('#question').val("");
         $('#duration').val("30");
@@ -25,6 +24,12 @@ $(document).ready(function () {
         $('#answer3').val("");
         $('#answer4').val("");
         $('#picURL').val("");
+    });
+
+    $('#deleteQ').click(function(){
+        document.getElementById('QTable').deleteRow(index + 1);
+        questions.remove(index);
+        index = -1;
     });
 
 
