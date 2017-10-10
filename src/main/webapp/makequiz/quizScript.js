@@ -7,7 +7,8 @@ $(document).ready(function () {
     var index = -1;
 
     $('#addQuestion').click(function () {
-        $('#questionModal').modal('hide');
+        $('#questionModal').modal();
+        $('#deleteQ').hide();
         $('#radio1').attr('disabled', 'true');
         $('#radio2').attr('disabled', 'true');
         $('#radio3').attr('disabled', 'true');
@@ -77,6 +78,7 @@ $(document).ready(function () {
             "<td>" + $('#duration').val() + " seconds" + "</td>"+
             "</tr>"
         );
+        $('#questionModal').modal('hide');
     });
 
     $("#save").click(function () {
@@ -164,6 +166,7 @@ $(document).ready(function () {
         $('#answer3').val(rowData.options[2]);
         $('#answer4').val(rowData.options[3]);
         $('#picURL').val(rowData.picURL);
+        $('#deleteQ').show();
 
         $('#questionModal').modal();
     });
