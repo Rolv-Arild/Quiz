@@ -7,12 +7,16 @@ $(document).ready(function () {
 
     $('#closeModal').click(function () {
         $('#question').val("");
-        $('#duration').val("");
+        $('#duration').val("30");
         $('#answer1').val("");
         $('#answer2').val("");
         $('#answer3').val("");
         $('#answer4').val("");
         $('#picURL').val("");
+        $('#radio1').attr('disabled', 'true');
+        $('#radio2').attr('disabled', 'true');
+        $('#radio3').attr('disabled', 'true');
+        $('#radio4').attr('disabled', 'true');
         document.getElementById('radio1').checked = false;
         document.getElementById('radio2').checked = false;
         document.getElementById('radio3').checked = false;
@@ -62,12 +66,18 @@ $(document).ready(function () {
             "<td>" + $('#duration').val() + " seconds" + "</td>"+
             "</tr>"
         );
+        $('#questionModal').modal('hide');
+        $('#radio1').attr('disabled', 'true');
+        $('#radio2').attr('disabled', 'true');
+        $('#radio3').attr('disabled', 'true');
+        $('#radio4').attr('disabled', 'true');
         document.getElementById('radio1').checked = false;
         document.getElementById('radio2').checked = false;
         document.getElementById('radio3').checked = false;
+        document.getElementById('radio3').checked = false;
         document.getElementById('radio4').checked = false;
         $('#question').val("");
-        $('#duration').val("");
+        $('#duration').val("30");
         $('#answer1').val("");
         $('#answer2').val("");
         $('#answer3').val("");
