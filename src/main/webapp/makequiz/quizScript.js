@@ -6,14 +6,8 @@ $(document).ready(function () {
     var questions = [];
     var index = -1;
 
-    $('#closeModal').click(function () {
-        $('#question').val("");
-        $('#duration').val("30");
-        $('#answer1').val("");
-        $('#answer2').val("");
-        $('#answer3').val("");
-        $('#answer4').val("");
-        $('#picURL').val("");
+    $('#addQuestion').click(function () {
+        $('#questionModal').modal('hide');
         $('#radio1').attr('disabled', 'true');
         $('#radio2').attr('disabled', 'true');
         $('#radio3').attr('disabled', 'true');
@@ -21,11 +15,19 @@ $(document).ready(function () {
         document.getElementById('radio1').checked = false;
         document.getElementById('radio2').checked = false;
         document.getElementById('radio3').checked = false;
+        document.getElementById('radio3').checked = false;
         document.getElementById('radio4').checked = false;
+        $('#question').val("");
+        $('#duration').val("30");
+        $('#answer1').val("");
+        $('#answer2').val("");
+        $('#answer3').val("");
+        $('#answer4').val("");
+        $('#picURL').val("");
     });
 
-    $('#saveQ').click(function () {
 
+    $('#saveQ').click(function () {
         if (!$('#question').val()) {
             alert("Please insert a question");
             return;
@@ -75,23 +77,6 @@ $(document).ready(function () {
             "<td>" + $('#duration').val() + " seconds" + "</td>"+
             "</tr>"
         );
-        $('#questionModal').modal('hide');
-        $('#radio1').attr('disabled', 'true');
-        $('#radio2').attr('disabled', 'true');
-        $('#radio3').attr('disabled', 'true');
-        $('#radio4').attr('disabled', 'true');
-        document.getElementById('radio1').checked = false;
-        document.getElementById('radio2').checked = false;
-        document.getElementById('radio3').checked = false;
-        document.getElementById('radio3').checked = false;
-        document.getElementById('radio4').checked = false;
-        $('#question').val("");
-        $('#duration').val("30");
-        $('#answer1').val("");
-        $('#answer2').val("");
-        $('#answer3').val("");
-        $('#answer4').val("");
-        $('#picURL').val("");
     });
 
     $("#save").click(function () {
