@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     $('#deleteQ').click(function(){
         document.getElementById('QTable').deleteRow(index + 1);
-        questions.remove(index);
+        questions.splice(index,1)
         index = -1;
     });
 
@@ -70,19 +70,21 @@ $(document).ready(function () {
         };
         if(index == -1){
             questions.push(question);
+            $('#QTable').append(
+                "<tr>"+
+                "<td>" + $('#question').val() + "</td>"+
+                "<td>" + $('#duration').val() + " seconds" + "</td>"+
+                "</tr>"
+            );
         }
         else{
-            document.getElementById('QTable').deleteRow(index + 1);
-            questions[index] = question;
+            $('#QTable > tbody > tr').eq(index).html(
+                "<td>" + $('#question').val() + "</td>"+
+                "<td>" + $('#duration').val() + " seconds" + "</td>"
+                );
+            questions.splice(index, 1, question);
             index = -1;
         }
-
-        $('#QTable').append(
-            "<tr>"+
-            "<td>" + $('#question').val() + "</td>"+
-            "<td>" + $('#duration').val() + " seconds" + "</td>"+
-            "</tr>"
-        );
         $('#questionModal').modal('hide');
     });
 

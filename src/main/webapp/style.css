@@ -16,7 +16,7 @@ width: 100%;
 text-align-all: center;
 }
 
-#websiteTitle{
+.websiteTitle{
     font-size: 7em;
     vertical-align: middle;
     font-family: var(--font1);
