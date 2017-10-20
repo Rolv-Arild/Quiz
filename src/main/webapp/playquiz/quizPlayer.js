@@ -22,6 +22,7 @@ $(document).ready(function () {
     if (qIndex === -1) return;
     var nick = getUrlParameter('nick');
     var selectedIndex = -1;
+    var currentQ;
 
     $.getJSON("/Quiz/rest/quizzes/" + quizID, function (data) {
         var quiz = data;
@@ -50,7 +51,7 @@ $(document).ready(function () {
 
 
         if (qIndex >= 0 && qIndex < questions.length) {
-            var currentQ = questions[qIndex];
+            currentQ = questions[qIndex];
             var i = currentQ.duration;
 
             $('#title').text(quiz.name);
@@ -96,34 +97,89 @@ $(document).ready(function () {
     $('#back').click(function () {
         window.location.href = "/Quiz/";
     });
-
     $('#btn1').click(function () {
-        $(this).addClass("selected");
-        $('#btn2').removeClass("selected");
-        $('#btn3').removeClass("selected");
-        $('#btn4').removeClass("selected");
-        selectedIndex = 0;
+        if(selectedIndex < 0) {
+            if (currentQ.answerIndex === 0) {
+                $(this).addClass("correct");
+            } else {
+                $(this).addClass("false");
+                if(currentQ.answerIndex === 3){
+                    $('#btn4').addClass("correct");
+                } else if(currentQ.answerIndex === 1){
+                    $('#btn2').addClass("correct");
+                } else if(currentQ.answerIndex === 2){
+                    $('#btn3').addClass("correct");
+                }
+            }
+            $('#btn1').prop('disabled', 'true');
+            $('#btn2').prop('disabled', 'true');
+            $('#btn3').prop('disabled', 'true');
+            $('#btn4').prop('disabled', 'true');
+            selectedIndex = 0;
+        }
     });
     $('#btn2').click(function () {
-        $(this).addClass("selected");
-        $('#btn1').removeClass("selected");
-        $('#btn3').removeClass("selected");
-        $('#btn4').removeClass("selected");
-        selectedIndex = 1;
+        if(selectedIndex < 0) {
+            if (currentQ.answerIndex === 1) {
+                $(this).addClass("correct");
+            } else {
+                $(this).addClass("false");
+                if(currentQ.answerIndex === 0){
+                    $('#btn1').addClass("correct");
+                } else if(currentQ.answerIndex === 3){
+                    $('#btn4').addClass("correct");
+                } else if(currentQ.answerIndex === 2){
+                    $('#btn3').addClass("correct");
+                }
+            }
+            $('#btn1').prop('disabled', 'true');
+            $('#btn2').prop('disabled', 'true');
+            $('#btn3').prop('disabled', 'true');
+            $('#btn4').prop('disabled', 'true');
+            selectedIndex = 1;
+        }
     });
     $('#btn3').click(function () {
-        $(this).addClass("selected");
-        $('#btn2').removeClass("selected");
-        $('#btn1').removeClass("selected");
-        $('#btn4').removeClass("selected");
-        selectedIndex = 2;
+        if(selectedIndex < 0) {
+            if (currentQ.answerIndex === 2) {
+                $(this).addClass("correct");
+            } else {
+                $(this).addClass("false");
+                if(currentQ.answerIndex === 0){
+                    $('#btn1').addClass("correct");
+                } else if(currentQ.answerIndex === 1){
+                    $('#btn2').addClass("correct");
+                } else if(currentQ.answerIndex === 3){
+                    $('#btn4').addClass("correct");
+                }
+            }
+            $('#btn1').prop('disabled', 'true');
+            $('#btn2').prop('disabled', 'true');
+            $('#btn3').prop('disabled', 'true');
+            $('#btn4').prop('disabled', 'true');
+            selectedIndex = 2;
+        }
     });
     $('#btn4').click(function () {
-        $(this).addClass("selected");
-        $('#btn2').removeClass("selected");
-        $('#btn3').removeClass("selected");
-        $('#btn1').removeClass("selected");
-        selectedIndex = 3;
+        if(selectedIndex < 0) {
+            if (currentQ.answerIndex === 3) {
+                $(this).addClass("correct");
+            } else {
+                $(this).addClass("false");
+                if(currentQ.answerIndex === 0){
+                    $('#btn1').addClass("correct");
+                } else if(currentQ.answerIndex === 1){
+                    $('#btn2').addClass("correct");
+                } else if(currentQ.answerIndex === 2){
+                    $('#btn3').addClass("correct");
+                }
+            }
+            $('#btn1').prop('disabled', 'true');
+            $('#btn2').prop('disabled', 'true');
+            $('#btn3').prop('disabled', 'true');
+            $('#btn4').prop('disabled', 'true');
+            selectedIndex = 3;
+        }
     });
 
 });

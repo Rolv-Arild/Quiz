@@ -10,6 +10,27 @@ body{
     background-size: cover;
 }
 
+.btn-default {
+    background-color: var(--main);
+}
+
+.btn-lg {
+    background-color: var(--main);
+    width: 25vw;
+    height: 25vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    font-size: 8vh;
+}
+
+.correct{
+    background-color: green;
+}
+
+.false{
+    background-color: red;
+}
+
 .display {
 margin-top: 20px;
 width: 100%;
@@ -35,20 +56,6 @@ text-align-all: center;
 #QTable tbody{
     cursor: pointer;
 }
-
-.btn-default {
-    background-color: var(--main);
-}
-
-.btn-lg {
-    background-color: var(--main);
-    width: 25vw;
-    height: 25vh;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    font-size: 8vh;
-}
-
 
 .center {
     margin: 0 auto;
