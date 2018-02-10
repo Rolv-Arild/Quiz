@@ -1,3 +1,3 @@
 language: java
 sudo: false
-script: mvn tomcat7:run
+script: mvn clean verify
